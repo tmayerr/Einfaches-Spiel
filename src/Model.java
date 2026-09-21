@@ -44,23 +44,27 @@ public class Model {
      * @param spielerZahl ist die eingetippte Zahl
      */
     public void berechneRunde(int spielerZahl){
+        this.spielerZahl = spielerZahl;
         if(this.computerZahl == spielerZahl){
             this.gesamtPunkte += 20;
+            this.rundenErgebnis = 20;
         }
         else if(this.computerZahl == spielerZahl - 1 || this.computerZahl == spielerZahl + 1){
             this.gesamtPunkte += 5;
+            this.rundenErgebnis = 5;
         }
         else{
             this.gesamtPunkte -= 10;
+            this.rundenErgebnis = -10;
         }
     }
 
     public boolean hatGewonnen(){
-        return true;
+        return this.gesamtPunkte >= 100;
     }
 
     public boolean hatVerloren(){
-        return false;
+        return this.gesamtPunkte <= 0;
     }
 
 }
