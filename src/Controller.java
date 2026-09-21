@@ -4,5 +4,5 @@
  * @author Tim Mayer
  * @version 2026-09-16
  */
-public class controller {
+public class Controller {
 }
