@@ -1,3 +1,5 @@
+import java.util.Random;
+
 /**
  * Das ist die Model Klasse für das Spiel
  * Diese Klasse fokusiert sich auf die Logik des Spiels
@@ -27,11 +29,21 @@ public class Model {
     }
 
     public void berechneComputerZahl(){
-
+        Random zahl = new Random();
+        int zufall = zahl.nextInt(9) + 1;
+        this.computerZahl = zufall;
     }
 
     public void berechneRunde(int spielerZahl){
-
+        if(this.computerZahl == spielerZahl){
+            this.gesamtPunkte += 20;
+        }
+        else if(this.computerZahl == spielerZahl - 1 || this.computerZahl == spielerZahl + 1){
+            this.gesamtPunkte += 5;
+        }
+        else{
+            this.gesamtPunkte -= 10;
+        }
     }
 
     public boolean hatGewonnen(){
@@ -39,7 +51,7 @@ public class Model {
     }
 
     public boolean hatVerloren(){
-        return true;
+        return false;
     }
 
 }
