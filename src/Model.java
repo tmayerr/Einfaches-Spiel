@@ -28,12 +28,21 @@ public class Model {
         return this.rundenErgebnis;
     }
 
+    /**
+     * berechnet eine zufällige Zahl von 1–9
+     * für den Computer und speichert sie
+     */
     public void berechneComputerZahl(){
         Random zahl = new Random();
         int zufall = zahl.nextInt(9) + 1;
         this.computerZahl = zufall;
     }
 
+    /**
+     * berechnet das Rundenergebnis (+20, +5 oder −10)
+     * sowie den neuen Gesamtpunktestand und speichert diese Werte samt Spielerzahl
+     * @param spielerZahl ist die eingetippte Zahl
+     */
     public void berechneRunde(int spielerZahl){
         if(this.computerZahl == spielerZahl){
             this.gesamtPunkte += 20;
