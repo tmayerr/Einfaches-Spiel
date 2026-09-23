@@ -19,7 +19,7 @@ public class Layout extends JPanel {
     JTextField spielerText = new JTextField();
     JTextField computerText = new JTextField();
 
-    JButton nochmal = new JButton("Noch einmal!");
+    JButton btnNochmal = new JButton("Noch einmal!");
 
 
 
@@ -62,7 +62,7 @@ public class Layout extends JPanel {
 
         //South Layout
         JPanel unten = new JPanel();
-        unten.add(nochmal);
+        unten.add(btnNochmal);
 
         add(unten, BorderLayout.SOUTH);
     }
