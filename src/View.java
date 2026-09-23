@@ -12,17 +12,13 @@ public class View extends JFrame {
     public View(){
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setTitle("Zahlen-Gewinnspiel (v1.0)");
-        setSize(500, 300);
+        setSize(700, 400);
 
         layout = new Layout();
 
         add(layout);
 
-
-
         setVisible(true);
     }
-    public static void main (String... args){
-        View view = new View();
-    }
+
 }

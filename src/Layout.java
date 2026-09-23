@@ -24,17 +24,22 @@ public class Layout extends JPanel {
 
 
     public Layout(){
-        setLayout(new BorderLayout());
+        setLayout(new BorderLayout(5, 5));
 
         //North Layout:
-        JPanel oben = new JPanel(new GridLayout(3, 2));
+        JPanel oben = new JPanel(new GridLayout(3, 2, 5, 5));
         oben.add(rundeTitel);
         oben.add(gesamtTitel);
+        //ist standartmäßig auf false --> heißt durchsichtig
+        runde.setOpaque(true);
         runde.setBackground(Color.WHITE);
         runde.setFont(new Font("Arial", Font.BOLD, 20));
+
         oben.add(runde);
+        gesamt.setOpaque(true);
         gesamt.setBackground(Color.WHITE);
         gesamt.setFont(new Font("Arial", Font.BOLD, 20));
+
         oben.add(gesamt);
         oben.add(deineZahl);
         oben.add(computer);
@@ -43,7 +48,14 @@ public class Layout extends JPanel {
 
         //Center Layout
         JPanel mitte = new JPanel(new GridLayout(1, 2));
+        spielerText.setFont(new Font("Arial", Font.BOLD, 50));
+        spielerText.setHorizontalAlignment(JTextField.CENTER);
         mitte.add(spielerText);
+
+        computerText.setFont(new Font("Arial", Font.BOLD, 50));
+        computerText.setHorizontalAlignment(JTextField.CENTER);
+        computerText.setEditable(false); //damit man es nicht mehr bearbeiten kann
+        computerText.setBackground(Color.WHITE);
         mitte.add(computerText);
 
         add(mitte, BorderLayout.CENTER);
