@@ -1,0 +1,57 @@
+import javax.swing.*;
+import java.awt.*;
+
+/**
+ * Das ist die View Klasse für das Spiel
+ * Diese Klasse fokusiert sich auf das Desgin des Spiels
+ * @author Tim Mayer
+ * @version 2026-09-16
+ */
+
+public class Layout extends JPanel {
+    JLabel rundeTitel  = new JLabel("Rundenergebnis:", SwingConstants.CENTER);
+    JLabel gesamtTitel = new JLabel("Gesamtpunkte:", SwingConstants.CENTER);
+    JLabel runde = new JLabel("Tippe eine Zahl von 1 bis 9", SwingConstants.CENTER);
+    JLabel gesamt = new JLabel("Gesamtpunkte: 30", SwingConstants.CENTER);
+    JLabel deineZahl = new JLabel("Deine Zahl:", SwingConstants.CENTER);
+    JLabel computer = new JLabel("Computer:", SwingConstants.CENTER);
+
+    JTextField spielerText = new JTextField();
+    JTextField computerText = new JTextField();
+
+    JButton nochmal = new JButton("Noch einmal!");
+
+
+
+    public Layout(){
+        setLayout(new BorderLayout());
+
+        //North Layout:
+        JPanel oben = new JPanel(new GridLayout(3, 2));
+        oben.add(rundeTitel);
+        oben.add(gesamtTitel);
+        runde.setBackground(Color.WHITE);
+        runde.setFont(new Font("Arial", Font.BOLD, 20));
+        oben.add(runde);
+        gesamt.setBackground(Color.WHITE);
+        gesamt.setFont(new Font("Arial", Font.BOLD, 20));
+        oben.add(gesamt);
+        oben.add(deineZahl);
+        oben.add(computer);
+
+        add(oben, BorderLayout.NORTH);
+
+        //Center Layout
+        JPanel mitte = new JPanel(new GridLayout(1, 2));
+        mitte.add(spielerText);
+        mitte.add(computerText);
+
+        add(mitte, BorderLayout.CENTER);
+
+        //South Layout
+        JPanel unten = new JPanel();
+        unten.add(nochmal);
+
+        add(unten, BorderLayout.SOUTH);
+    }
+}
