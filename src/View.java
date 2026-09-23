@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 
 /**
  * Das ist die View Klasse für das Spiel
@@ -67,6 +68,20 @@ public class View extends JFrame {
         layout.computerText.setText("");
     }
 
+    public void farben(boolean gewonnen, boolean verloren){
+        Color color;
+        if(gewonnen){
+            color = Color.GREEN;
+        }
+        else if(verloren){
+            color = Color.RED;
+        }
+        else{
+            color = Color.WHITE;
+        }
+        layout.runde.setBackground(color);
+        layout.gesamt.setBackground(color);
+    }
 
 
 }
