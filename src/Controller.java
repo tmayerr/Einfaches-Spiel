@@ -49,6 +49,7 @@ public class Controller implements ActionListener {
         view.setComputerText(model.getComputerZahl());
         view.setRundenErgebnis(ergebnis());
         view.setGesamtPunkte(model.getGesamtPunkte());
+        view.sperrenT();
     }
 
     /**

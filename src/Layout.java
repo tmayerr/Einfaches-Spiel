@@ -62,6 +62,7 @@ public class Layout extends JPanel {
 
         //South Layout
         JPanel unten = new JPanel();
+        btnNochmal.setEnabled(false);
         unten.add(btnNochmal);
 
         add(unten, BorderLayout.SOUTH);

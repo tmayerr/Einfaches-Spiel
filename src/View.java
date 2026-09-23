@@ -65,6 +65,13 @@ public class View extends JFrame {
     public void neueRunde(){
         layout.spielerText.setText("");
         layout.computerText.setText("");
+        layout.spielerText.setEditable(true);
+        layout.btnNochmal.setEnabled(false);
+    }
+
+    public void sperrenT(){
+        layout.spielerText.setEditable(false);
+        layout.btnNochmal.setEnabled(true);
     }
 
 
