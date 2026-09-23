@@ -49,6 +49,9 @@ public class Controller implements ActionListener {
         view.setComputerText(model.getComputerZahl());
         view.setRundenErgebnis(ergebnis());
         view.setGesamtPunkte(model.getGesamtPunkte());
+        boolean plus = model.hatGewonnen() || model.getRundenErgebnis() > 0;
+        boolean minus = model.hatVerloren() || model.getRundenErgebnis() < 0;
+        view.farben(plus, minus);
         view.sperrenT();
     }
 
