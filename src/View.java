@@ -68,6 +68,7 @@ public class View extends JFrame {
         layout.computerText.setText("");
         layout.spielerText.setEditable(true);
         layout.btnNochmal.setEnabled(false);
+        farben(false, false);
     }
 
     public void sperrenT(){
