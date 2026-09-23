@@ -1,4 +1,3 @@
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -34,8 +33,14 @@ public class Controller implements ActionListener {
 
     public void rundeS(){
         int zahl;
-        zahl = view.getSpielerText();
+        try {
+            zahl = view.getSpielerText();
+        } catch(NumberFormatException ex){
+            view.setRundenErgebnis("Eine Zahl eingeben");
+            return;
+        }
         if(zahl < 1 || zahl > 9){
+            view.setRundenErgebnis("Eine Zahl zwischen 1 und 9");
             return;
         }
         model.berechneComputerZahl();
